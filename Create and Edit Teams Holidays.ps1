@@ -1,22 +1,38 @@
 #This script will create or edit Microsoft Teams holiday schedules
 
 #Prerequisites:
-    #Connect PowerShell to Skype for Business online
+    #Active connection to Skype for Business online PowerShell.
 
 #Author: Clayton Martin, Landis Technologies LLC
 #This script is provided "As Is" without any warranty of any kind. In no event shall the author be liable for any damages arising from the use of this script.
 
-
-#Parameter Options: https://kayaposoft.com/enrico/json/
-
-$HolidayYear = "2021"
 $Country = "usa"
 $region = "pa"
 $holidayType = "public_holiday"
+$HolidayYear = "2021"
 #Time must be in 15min increments
 $StartTime = "00:00"
 $EndTime = "23:45"
 
+<#Parameter Options: https://kayaposoft.com/enrico/json/
+
+country:	
+    ISO 3166-1 alpha-3 country code or ISO 3166-1 alpha-2 country code
+region:	
+    Possible values for New Zealand: ISO 3166-2:NZ codes - auk, bop, can, gis, hkb, mbh, mwt, nsn, ntl, ota, stl, tas, tki, wko, wgn, wtc, cit
+    Possible values for Australia: ISO 3166-2:AU codes - nsw, qld, sa, tas, vic, wa, act, nt
+    Possible values for Canada: ISO 3166-2:CA codes - ab, bc, mb, nb, nl, ns, on, pe, qc, sk, nt, nu, yt
+    Possible values for United States of America: ISO 3166-2:US codes - al, ak, az, ar, ca, co, ct, de, fl, ga, hi, id, il, in, ia, ks, ky, la, me, md, ma, mi, mn, ms, mo, mt, ne, nv, nh, nj, nm, ny, nc, nd, oh, ok, or, pa, ri, sc, sd, tn, tx, ut, vt, va, wa, wv, wi, wy, dc
+    Possible values for Germany: ISO 3166-2:DE codes - bw, by, be, bb, hb, hh, he, mv, ni, nw, rp, sl, sn, st, sh, th
+    Possible values for Great Britain: ISO 3166-2:GB codes - eng, nir, sct, wls
+holidayType:
+    all - all holiday types
+    public_holiday - public holidays
+    observance - observances, not a public holidays
+    school_holiday - school holidays
+    other_day - other important days e.g. Mother's day, Father's day etc
+    extra_working_day - extra working days. This day takes place mostly on Saturday or Sunday and is substituted for extra public holiday.
+#>
 
 
 #Get Existing Holiday Schedules
